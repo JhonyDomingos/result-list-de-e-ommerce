@@ -1,0 +1,7 @@
+echo ' Check for linting errors in the codebase... ⚙️'
+echo ' Running eslint tests before commiting... ⚙️' 
+npm run check:fix || 
+(echo '❌ Linting errors. Please fix them before commiting! ❌' && exit 1)
+
+echo 'Done! ✅'
+echo '🚀 All checks passed!🚀'
