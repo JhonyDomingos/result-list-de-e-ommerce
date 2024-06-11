@@ -1,3 +1,3 @@
-module.exports = {
-    extends: ['@commitlint/config-conventional'],
-};
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = { extends: ['@commitlint/config-conventional'] };
