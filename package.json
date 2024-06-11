@@ -2,13 +2,14 @@
   "name": "result-list-de-ecommerce",
   "private": true,
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky",
     "check": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "check:fix": "eslint . --ext .ts --fix"
+    "check:fix": "eslint . --ext ts,tsx --fix"
   },
   "dependencies": {
     "react": "^18.2.0",
