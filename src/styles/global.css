@@ -1,3 +1,25 @@
-:root { 
+:root {
+    /* Background Colors */
+    --background-section: hsla(34, 62%, 95%, 1);
+    --default-white:hsla(0, 0%, 100%, 1);
+    /* Button Colors */
+    --button-active: hsla(42, 59%, 45%, 1);
+    --button-default: hsla(33, 60%, 94%, 1);
+
+    /* Text Colors */
     
+    --text-black: hsla(0, 0%, 0%, 1);
+    --text-gray-description: hsla(0, 0%, 54%, 1);
+
+    /* Card Colors */
+    --card-default: hsla(0, 0%, 23%, 1);
+    --card-background: hsla(220, 16%, 96%, 1); 
+    
+}
+
+body { 
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--default-white);
+    color: var(--text-black);
+    font-weight: 500;
 }

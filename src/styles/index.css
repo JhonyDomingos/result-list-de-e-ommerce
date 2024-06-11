@@ -5,13 +5,5 @@
 
 
 /*CUSTOM CSS IMPORTS */
-
 @import url("reset.css");
-
-h1 {
-  font-family: 'Poppins', sans-serif;
-}
-
-h2 {
-  font-family: 'Montserrat', sans-serif;
-}
+@import url("global.css");
