@@ -57,11 +57,12 @@
         width: 60vw;
         height: auto;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         border: none;
         background-color: var(--default-white);
         position: static;
         transform: none;
+       
 
 
     }
