@@ -23,3 +23,15 @@ body {
     color: var(--text-black);
     font-weight: 500;
 }
+
+button {
+    background: transparent;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .6rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
