@@ -1,0 +1,66 @@
+.burgerBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btnMenuBars {
+    display: block;
+    position: relative;
+    width: 28px;
+    height: 3px;
+    background-color: #000;
+
+}
+
+.btnMenuBars::before,
+.btnMenuBars::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+.btnMenuBars::before {
+    transform: translate(0, -7px);
+    transition: .3s ease;
+}
+
+.btnMenuBars::after {
+    transform: translate(0, 7px);
+    transition: .3s ease;
+}
+
+.menuOpen .btnMenuBars {
+    background-color: transparent;
+
+}
+
+
+.menuOpen .btnMenuBars:before {
+    transform: rotate(45deg);
+
+}
+
+.menuOpen .btnMenuBars:after {
+    transform: rotate(-45deg);
+
+}
+@media screen and (min-width: 768px)
+{
+    .burgerBtn {
+        display: none;
+    }
+}
