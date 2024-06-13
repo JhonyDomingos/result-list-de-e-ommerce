@@ -19,28 +19,32 @@ export const Header = ({ name }: IHeaderProps) => {
     console.log("click", openMenu);
   };
   return (
-    <header className={headerStyle.header}>
-      <div className={headerStyle.headerLogo}>
-        <img src={logo} alt="Store Logotype" />
-        <h1>{name}</h1>
-      </div>
-      <div
-        className={`${headerStyle.navContainer} ${
-          openMenu ? headerStyle.navContainerOpen : ""
-        }`}
-      ></div>
-      <NavegationBar onClickItem={handleMenuItemClick} isOpen={openMenu} />
+    <div className="container">
+      <header className={headerStyle.header}>
+        <div className={headerStyle.headerLogo}>
+          <img src={logo} alt="Store Logotype" />
+          <h1>{name}</h1>
+        </div>
+        <div
+          className={`${headerStyle.navContainer} ${
+            openMenu ? headerStyle.navContainerOpen : ""
+          }`}
+        ></div>
+        <NavegationBar onClickItem={handleMenuItemClick} isOpen={openMenu} />
 
-      <Button
-        className={`${burgerStyle.burgerBtn} ${
-          openMenu ? burgerStyle.menuOpen : ""
-        } }`}
-        type="button"
-        onClick={handleClick}
-        title="Burger Menu"
-      >
-        <span className={burgerStyle.btnMenuBars} aria-hidden="true"></span>
-      </Button>
-    </header>
+        <Button
+          className={`${burgerStyle.burgerBtn} ${
+            openMenu ? burgerStyle.menuOpen : ""
+          } }`}
+          type="button"
+          onClick={handleClick}
+          title="Burger Menu"
+        >
+          <span className={burgerStyle.btnMenuBars} aria-hidden="true"></span>
+        </Button>
+      </header>
+
+
+    </div>
   );
 };

@@ -1,0 +1,160 @@
+/* mobile Screens */
+.wrapper {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-section);
+}
+
+.textBox {
+    z-index: 1;
+    text-align: center;
+
+}
+
+.path {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    gap: 1rem;
+}
+
+.textBox .title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-black);
+    margin-bottom: 1rem;
+}
+
+/* Background Container */
+.bgContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.bgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center right;
+    filter: blur(2px) opacity(80%);
+}
+
+/* Filter Bar */
+.filterBar {
+    height: 100px;
+    background-color: var(--background-section);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.filterBar p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Filter Button */
+.filterBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.filterBtnContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+
+
+.filterBtnContainer button {
+    padding: 0;
+}
+
+/* Show Items */
+.showItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
+    margin-top: 2.5rem;
+}
+
+.showItems p {
+    margin: 0;
+    padding-right: 5px;
+}
+
+.showItems input {
+    width: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Iput config */
+.showItems input[type=number] {
+    -moz-appearance: textfield;
+}
+ 
+.showItems input[type=number]::-webkit-outer-spin-button,
+.showItems input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Media Query for Tablets and Larger Screens */
+@media screen and (min-width: 768px) {
+    .filterBtnContainer {
+        flex-direction: row;
+        align-items: center;
+        /* Adjusted alignment */
+    }
+
+    .filterBar {
+        padding: 0 5rem;
+    }
+
+    .showItems input {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        /* Adjusted height for better visibility */
+    }
+
+    .bgContainer img {
+        object-fit: cover;
+        /* Adjusted object position */
+    }
+
+    .showItems {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0;
+    }
+    .showItems p {
+        font-size: 1.25rem;
+        font-weight: 400;
+      
+       
+    }
+    
+}
