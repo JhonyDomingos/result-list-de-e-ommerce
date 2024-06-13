@@ -4,6 +4,7 @@ import iconCart from "../../assets/icons/icon-cart.svg";
 import iconSeacrh from "../../assets/icons/icon-search.svg";
 import iconHeart from "../../assets/icons/icont-heart.svg";
 import iconAccountAlert from "../../assets/icons/icon-account-alert.svg";
+
 interface INavegationBarProps {
   isOpen: boolean;
   onClickItem: () => void;
@@ -37,7 +38,6 @@ export const NavegationBar = ({ onClickItem, isOpen }: INavegationBarProps) => {
           </a>
         </li>
       </ul>
-
       <div className={navegationStyle.actionsBtn}>
         <Button type="button" title="Account Alert Icon" onClick={onClickItem}>
           <img src={iconAccountAlert} alt="" />
@@ -52,6 +52,7 @@ export const NavegationBar = ({ onClickItem, isOpen }: INavegationBarProps) => {
           <img src={iconCart} alt="" />
         </Button>
       </div>
+ 
     </nav>
   );
 };

@@ -1,57 +1,49 @@
 .header {
     width: 100%;
-    height: 80px;
+    height: clamp(3.75rem, 10vw, 80px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 .7rem;
-
+    padding: 0 1rem;
 }
 
 .header .headerLogo {
     display: inline-flex;
     align-items: center;
     gap: clamp(0.125rem, 1vw, 0.3125rem);
-
 }
 
 .headerLogo img {
-    width: 2.125rem;
+    width: 34px;
     height: 2rem;
-
-
-
 }
 
 .header .headerLogo h1 {
-    font-size: clamp(25px, 2.5vw, 30px);
+    font-size: clamp(1.5625rem, 2.5vw, 1.875rem);
     font-weight: 800;
     color: #000;
     font-family: 'Montserrat', sans-serif;
-
 }
 
-
-
 @media screen and (min-width: 768px) {
-    .header {
-        justify-content: space-evenly;
-
-    }
-
-
-
     .headerLogo img {
         width: 2rem;
         height: 2.5rem;
     }
-
-
-
-
 }
 
-@media screen and (max-width: 943px) {
+@media screen and (max-width: 1024px) and (min-width: 768px) {
 
-    
+    .header {
+        padding: 0;
+        justify-content: space-around;
+        padding: 0 1.5rem;
+    }
+
+
+    .headerLogo img {
+        width: 2.5rem;
+        height: 3rem;
+    }
+
 }
