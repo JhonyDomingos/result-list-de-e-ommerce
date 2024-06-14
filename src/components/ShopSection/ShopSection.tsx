@@ -5,6 +5,7 @@ import iconFilter from "../../assets/icons/system-uicons_filtering.svg";
 import { BgContainer } from "./bgContainer/BgContainer";
 import { FilterButton } from "./filterButton/FilterButton";
 import { ResultInfo } from "./resultInfo/ResultInfo";
+import { Input } from "../input/Input";
 export const ShopSection = () => {
   return (
     <div className="container">
@@ -13,7 +14,9 @@ export const ShopSection = () => {
           <h1 className={shopSectionStyles.title}>Shop Section</h1>
           <p className={shopSectionStyles.path}>
             <span>home</span>
-            <span><img src={arrow} alt="arrow" /></span>
+            <span>
+              <img src={arrow} alt="arrow" />
+            </span>
             Shop
           </p>
         </div>
@@ -26,6 +29,7 @@ export const ShopSection = () => {
         <div className={shopSectionStyles.filterBtnContainer}>
           <FilterButton
             classname={shopSectionStyles.filterBtn}
+            props={{ type: "button", title: "Filter Button" }}
             icon={iconFilter}
           />
           <ResultInfo
@@ -36,10 +40,10 @@ export const ShopSection = () => {
           />
         </div>
         <div className={shopSectionStyles.showItems}>
-          <p>Show</p>
-          <input type="number" min="1" max="32" />
+          <Input label="Show" type="number" min="1" max="32" />
         </div>
       </section>
+      
     </div>
   );
 };
