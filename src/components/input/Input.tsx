@@ -2,12 +2,15 @@ import  { InputHTMLAttributes, forwardRef } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string;
+  label: string;
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ errorMessage, ...props }, ref) => {
+
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ errorMessage, label, ...props }, ref) => {
     return (
       <>
+      <label>{label}</label>
         <input {...props} ref={ref} />
         {errorMessage && <span style={{ color: "red" }}>{errorMessage}</span>}
       </>
@@ -15,4 +18,4 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   }
 );
 
-export default Input;
+
