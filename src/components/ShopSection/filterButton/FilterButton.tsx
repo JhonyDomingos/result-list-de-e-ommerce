@@ -1,14 +1,16 @@
-import { Button } from "../../Buttons/defaultButtons/buttons";
+import { Button, IButtonProps } from "../../Buttons/defaultButtons/buttons";
 
 interface IFilterButtonProps {
   icon: string;
   classname?: string;
+  props?: IButtonProps
+
 }
 
-export const FilterButton = ({ icon, classname }: IFilterButtonProps) => {
+export const FilterButton = ({ props, icon, classname }: IFilterButtonProps) => {
   return (
     <div className={classname}>
-      <Button>
+      <Button {...props}>
         <img src={icon} alt="Filter Icon" />
       </Button>
       <p>Filter</p>

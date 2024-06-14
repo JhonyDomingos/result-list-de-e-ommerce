@@ -60,8 +60,8 @@
     padding: 0 1rem;
 }
 
-.filterBar p {
-    font-size: 1rem;
+.filterBar p, .showItems label {
+    font-size: 0.875rem;
     font-weight: 400;
 }
 
@@ -91,7 +91,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .3rem;
+    gap: .5rem;
     margin-top: 2.5rem;
 }
 
@@ -111,6 +111,7 @@
 /* Iput config */
 .showItems input[type=number] {
     -moz-appearance: textfield;
+    appearance: textfield; /* Add the default appearance property */
 }
  
 .showItems input[type=number]::-webkit-outer-spin-button,
