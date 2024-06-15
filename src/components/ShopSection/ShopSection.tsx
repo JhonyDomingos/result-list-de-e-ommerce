@@ -6,8 +6,19 @@ import { BgContainer } from "./bgContainer/BgContainer";
 import { FilterButton } from "./filterButton/FilterButton";
 import { ResultInfo } from "./resultInfo/ResultInfo";
 import { Input } from "../input/Input";
+import { ResultListContext } from "../../Provider/ResulListContext";
+import { useContext } from "react";
+
 export const ShopSection = () => {
-  return (
+  const { itemsPerPage,setItemsPerPage } =
+  useContext(ResultListContext);
+  
+
+  const handlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setItemsPerPage(Number(e.target.value));
+    console.log(e.target.value);
+    }
+    return (
     <div className="container">
       <section className={shopSectionStyles.wrapper}>
         <div className={shopSectionStyles.textBox}>
@@ -29,7 +40,7 @@ export const ShopSection = () => {
         <div className={shopSectionStyles.filterBtnContainer}>
           <FilterButton
             classname={shopSectionStyles.filterBtn}
-            props={{ type: "button", title: "Filter Button" }}
+            props={{ type: "button", title: "Filter Button", onClick: () => {}}}
             icon={iconFilter}
           />
           <ResultInfo
@@ -40,7 +51,7 @@ export const ShopSection = () => {
           />
         </div>
         <div className={shopSectionStyles.showItems}>
-          <Input label="Show" type="number" min="1" max="32" />
+          <Input label="Show" type="number" min="1" max="32" value={itemsPerPage} onChange={handlChange}  />
         </div>
       </section>
       
