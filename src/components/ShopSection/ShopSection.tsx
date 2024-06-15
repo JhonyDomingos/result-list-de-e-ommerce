@@ -10,7 +10,7 @@ import { useContext, useState } from "react";
 import { Input } from "../input/Input";
 
 export const ShopSection = () => {
-  const {itemsPerPage, setItemsPerPage, productList, indexOfFirstItem, indexOfLastItem } =
+  const {setItemsPerPage, productList, indexOfFirstItem, indexOfLastItem } =
     useContext(ResultListContext);
 
     const [inputValue, setInputValue] = useState(""); // Estado local para o valor do input

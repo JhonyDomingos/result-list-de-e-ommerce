@@ -1,7 +1,6 @@
 import { useContext, useMemo } from "react";
 import { Button } from "../../Buttons/defaultButtons/buttons";
 import { ResultListContext } from "../../../Provider/ResulListContext";
-import { useNavigate } from "react-router-dom";
 
 // Definição do componente Pagination
 export const Pagination = () => { 
