@@ -12,7 +12,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       <>
       <label>{label}</label>
         <input {...props} ref={ref} />
-        {errorMessage && <span style={{ color: "red" }}>{errorMessage}</span>}
+        {errorMessage && <span >{errorMessage}</span>}
       </>
     );
   }

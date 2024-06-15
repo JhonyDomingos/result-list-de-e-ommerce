@@ -5,20 +5,29 @@ import iconFilter from "../../assets/icons/system-uicons_filtering.svg";
 import { BgContainer } from "./bgContainer/BgContainer";
 import { FilterButton } from "./filterButton/FilterButton";
 import { ResultInfo } from "./resultInfo/ResultInfo";
-import { Input } from "../input/Input";
 import { ResultListContext } from "../../Provider/ResulListContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { Input } from "../input/Input";
 
 export const ShopSection = () => {
-  const { itemsPerPage,setItemsPerPage } =
-  useContext(ResultListContext);
-  
+  const {itemsPerPage, setItemsPerPage, productList, indexOfFirstItem, indexOfLastItem } =
+    useContext(ResultListContext);
 
-  const handlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setItemsPerPage(Number(e.target.value));
-    console.log(e.target.value);
-    }
-    return (
+    const [inputValue, setInputValue] = useState(""); // Estado local para o valor do input
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value.trim(); // Remove espaços em branco desnecessários
+  
+      // Verifica se o valor é um número válido
+      if (/^\d*$/.test(value)) {
+        const parsedValue = parseInt(value, 10); // Parse o valor para um número inteiro
+        setItemsPerPage(parsedValue); // Atualiza itemsPerPage com o valor digitado
+        setInputValue(value); // Atualiza o estado local do input com o valor digitado
+      }
+      if(value === "") setItemsPerPage(10); 
+      // Se o valor for vazio, volta para o valor padrão (10 itens por página)
+    };
+  return (
     <div className="container">
       <section className={shopSectionStyles.wrapper}>
         <div className={shopSectionStyles.textBox}>
@@ -40,21 +49,30 @@ export const ShopSection = () => {
         <div className={shopSectionStyles.filterBtnContainer}>
           <FilterButton
             classname={shopSectionStyles.filterBtn}
-            props={{ type: "button", title: "Filter Button", onClick: () => {}}}
+            props={{
+              type: "button",
+              title: "Filter Button",
+              onClick: () => {},
+            }}
             icon={iconFilter}
           />
           <ResultInfo
             classname={shopSectionStyles.resultInfo}
-            start={1}
-            end={16}
-            total={32}
+            start={indexOfFirstItem + 1 || 0}
+            end={Math.min(indexOfLastItem, productList.length) || 0}
+            total={productList.length}
           />
         </div>
         <div className={shopSectionStyles.showItems}>
-          <Input label="Show" type="number" min="1" max="32" value={itemsPerPage} onChange={handlChange}  />
+          <Input
+           label="Show"
+           type="number"
+           value={inputValue}
+           onChange={handleChange}
+           placeholder="16"
+          />
         </div>
       </section>
-      
     </div>
   );
 };

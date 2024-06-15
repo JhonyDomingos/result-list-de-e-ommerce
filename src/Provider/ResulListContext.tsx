@@ -24,15 +24,16 @@ export const ResultListProvider = ({ children }: IResultListProviderProps) => {
   const [itemsPerPage, setItemsPerPage] = useState<number>(10);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
+
   // Calcula o total de páginas
-  // Math.ceil arredonda para cima
   const pages = Math.ceil(productList.length / itemsPerPage);
   // Calcula o index do primeiro item
-  const indexOfFirstItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = (currentPage - 1) * itemsPerPage;
   // Calcula o index do último item
-  const indexOfLastItem = indexOfFirstItem + itemsPerPage;
-  // Pega os itens atuaisque estão sendo exibidos
+  const indexOfLastItem = Math.min(indexOfFirstItem + itemsPerPage, productList.length);
+  // Pega os itens atuais que estão sendo exibidos
   const currentItems = productList.slice(indexOfFirstItem, indexOfLastItem);
+
 
   useEffect(() => {
     const getProductList = () => {
@@ -43,7 +44,7 @@ export const ResultListProvider = ({ children }: IResultListProviderProps) => {
   }, []);
 
   useEffect(() => {
-    setCurrentPage(0);
+    setCurrentPage(1);
   }, [itemsPerPage]);
   
 
