@@ -7,7 +7,7 @@ export const Pagination = () => {
   // Obtém as variáveis e funções necessárias do contexto ResultListContext
   const { pages, currentPage, setCurrentPage } = useContext(ResultListContext);
   // Define o número máximo de páginas visíveis de cada lado da página atual
-  const maxVisiblePages = 1;
+  const maxVisiblePages = 2;
   // Cálculo das páginas visíveis usando useMemo para otimização
   const visiblePages = useMemo(() => {
     // Calcula a primeira página visível garantindo que não seja menor que 1
@@ -29,7 +29,6 @@ export const Pagination = () => {
 
   // Verifica se o botão "Previous" pode ser habilitado
   const couldGoBack = currentPage > 1;
-  console.log(couldGoBack);
   // Verifica se o botão "Next" pode ser habilitado
   const couldGoForward = currentPage < pages;
 
@@ -64,6 +63,9 @@ export const Pagination = () => {
       <Button
         onClick={() => handlerProductsPagination(currentPage + 1)}
         disabled={!couldGoForward}
+        className={`${paginationStyles.paginationButton} ${
+          !couldGoForward ? paginationStyles.hidden : ""
+        }`}
       >
         Next
       </Button>
