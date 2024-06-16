@@ -41,7 +41,6 @@ export const Pagination = () => {
         }`}
         onClick={() => handlerProductsPagination(currentPage - 1)}
         disabled={!couldGoBack}
-        active={!couldGoBack}
       >
         Prev
       </Button>
@@ -49,10 +48,10 @@ export const Pagination = () => {
         {/* Mapeia e renderiza os botões das páginas visíveis */}
         {visiblePages.map((page) => (
           <Button
-           className={`${currentPage === page ? paginationStyles.active : ""}`}
+            className={`${currentPage === page ? paginationStyles.active : ""}`}
             key={page}
             disabled={currentPage === page} // Desabilita o botão se for a página atual
-            active={currentPage === page} // Adiciona a classe active se for a página atual
+            
             onClick={() => handlerProductsPagination(page)} // Muda para a página clicada
           >
             {page}

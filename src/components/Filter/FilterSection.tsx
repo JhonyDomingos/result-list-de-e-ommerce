@@ -6,7 +6,7 @@ import { ResultListContext } from "../../Provider/ResulListContext";
 
 export const FilterSection = () => {
   const {
-    visible,    
+    visible,
     alphabeticalOrder,
     setAlphabeticalOrder,
     priceOrder,
@@ -15,7 +15,7 @@ export const FilterSection = () => {
     clearFilters,
   } = useContext(ResultListContext);
 
-  const handleApplyFilters = () => {
+  const handleApplyFilters = () => {  // function to apply filters
     applyFilter();
   };
 
@@ -37,8 +37,9 @@ export const FilterSection = () => {
               name="alphabeticalOrder"
               title="Order A-Z"
               label="a-z"
-              onChange={() => setAlphabeticalOrder("a-z")}
+              onChange={() => setAlphabeticalOrder("a-z")}              
               checked={alphabeticalOrder === "a-z"}
+             
             />
             <Input
               type="radio"

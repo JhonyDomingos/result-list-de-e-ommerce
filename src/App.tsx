@@ -1,3 +1,4 @@
+import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/header/Header";
 import { ResultPage } from "./pages/ResultPage/ResultPage";
 import { ResultListProvider } from "./Provider/ResulListContext";
@@ -10,6 +11,8 @@ export const App = () => {
       <ResultListProvider>
         <ResultPage />
       </ResultListProvider>
+
+      <Footer />
     </>
   );
 };

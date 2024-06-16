@@ -10,7 +10,8 @@ export const ResultListContext =
 
 interface IResultListProviderProps {
   // interface for the props
-  children: React.ReactNode; // children prop is required and it should be a ReactNode
+  children: React.ReactNode; 
+  // children é um tipo de propriedade que recebe qualquer tipo de elemento react (componentes, texto, etc)
 }
 export const ResultListProvider = ({ children }: IResultListProviderProps) => {
   /*LOGICA DA PAGINAÇÃO

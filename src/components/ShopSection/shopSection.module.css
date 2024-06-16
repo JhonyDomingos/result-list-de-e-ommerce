@@ -113,9 +113,9 @@
     gap:.6rem;
 }
 
-.showItems label input {
+.showItems  input {
     width: 30px;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;

@@ -1,0 +1,36 @@
+.linksContainer {
+    height: 100%;
+    margin: 1rem 0;
+}
+
+.linksContainer ul {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 2.5rem 0;
+
+}
+
+.linksList li {
+    list-style: none;
+}
+
+.linksList li a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.linksList li a:hover {
+    text-decoration: underline;
+}
+
+@media screen and  (max-width: 768px) {
+   
+    .linksContainer ul { 
+        margin: 2rem 0;
+        gap: 2rem
+    }
+}
