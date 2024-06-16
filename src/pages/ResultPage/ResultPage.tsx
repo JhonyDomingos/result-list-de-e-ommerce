@@ -6,13 +6,10 @@ export const ResultPage = () => {
   return (
     <div className="container">
       <main>
-      <ShopSection />
+        <ShopSection />
 
         <ResultList />
-        <Pagination 
-         
-          />
-
+        <Pagination />
       </main>
     </div>
   );

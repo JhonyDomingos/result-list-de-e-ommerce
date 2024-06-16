@@ -10,23 +10,25 @@ import { useContext, useState } from "react";
 import { Input } from "../input/Input";
 
 export const ShopSection = () => {
-  const {setItemsPerPage, productList, indexOfFirstItem, indexOfLastItem } =
+  const { setItemsPerPage, productList, indexOfFirstItem, indexOfLastItem } =
     useContext(ResultListContext);
 
-    const [inputValue, setInputValue] = useState(""); // Estado local para o valor do input
+  const [inputValue, setInputValue] = useState(""); // Estado local para o valor do input
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      const value = e.target.value.trim(); // Remove espaços em branco desnecessários
-  
-      // Verifica se o valor é um número válido
-      if (/^\d*$/.test(value)) {
-        const parsedValue = parseInt(value, 10); // Parse o valor para um número inteiro
-        setItemsPerPage(parsedValue); // Atualiza itemsPerPage com o valor digitado
-        setInputValue(value); // Atualiza o estado local do input com o valor digitado
-      }
-      if(value === "") setItemsPerPage(10); 
-      // Se o valor for vazio, volta para o valor padrão (10 itens por página)
-    };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.trim(); // Remove espaços em branco desnecessários
+
+    // Como o input é do tipo "number", o valor já estará vazio ou será um número válido
+
+    const parsedValue = parseInt(value, 10); // converte o valor para um número inteiro
+    if (!isNaN(parsedValue) && parsedValue > 0) {
+      setItemsPerPage(parsedValue); // Atualiza itemsPerPage com o valor digitado
+      setInputValue(value); // Atualiza o estado local do input com o valor digitado
+    } else {
+      setItemsPerPage(10); // Se o valor não for um número válido, volta para o valor padrão (10 itens por página)
+      setInputValue(""); // Limpa o estado local do input se o valor for inválido
+    }
+  };
   return (
     <div className="container">
       <section className={shopSectionStyles.wrapper}>
@@ -65,11 +67,11 @@ export const ShopSection = () => {
         </div>
         <div className={shopSectionStyles.showItems}>
           <Input
-           label="Show"
-           type="number"
-           value={inputValue}
-           onChange={handleChange}
-           placeholder="16"
+            label="Show"
+            type="number"
+            value={inputValue}
+            onChange={handleChange}
+            placeholder="16"
           />
         </div>
       </section>
