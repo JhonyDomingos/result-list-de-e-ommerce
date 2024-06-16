@@ -60,7 +60,7 @@
     padding: 0 1rem;
 }
 
-.filterBar p, .showItems label {
+.filterBar p, .showItems label span{
     font-size: 0.875rem;
     font-weight: 400;
 }
@@ -84,6 +84,7 @@
 
 .filterBtnContainer button {
     padding: 0;
+    
 }
 
 /* Show Items */
@@ -93,6 +94,8 @@
     align-items: center;
     gap: .5rem;
     margin-top: 2.5rem;
+
+    
 }
 
 .showItems p {
@@ -100,12 +103,20 @@
     padding-right: 5px;
 }
 
-.showItems input {
+.showItems label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:.6rem;
+}
+
+.showItems label input {
     width: 30px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;
+    order: 1;
 }
 
 /* Iput config */
@@ -132,7 +143,7 @@
         padding: 0 5rem;
     }
 
-    .showItems input {
+    .showItems label input {
         width: 30px;
         height: 30px;
         text-align: center;

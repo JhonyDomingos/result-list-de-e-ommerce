@@ -1,0 +1,180 @@
+/* filterSection.module.css */
+.container {
+    position: absolute;
+    top: 67%;
+    left: 3%;
+    width: 280px;
+    height: 320px;
+    display: flex;
+    background: white;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.filterSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: white;
+    padding: 20px;
+
+
+}
+
+.filterSection::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    border-width: 0 20px 20px 20px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
+
+.filterSection h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.filterSection p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.orderInputs,
+.orderInputsPrice {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    margin: 0.5rem 0;
+    gap: 1rem;
+}
+
+.orderInputs label span,
+.orderInputsPrice label span {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #888;
+    border: 2px solid #888;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.orderInputs label input,
+.orderInputsPrice label input {
+    display: none;
+}
+
+.orderInputs label input:checked+span,
+.orderInputsPrice label input:checked+span,
+.orderInputs label input:hover+span,
+.orderInputsPrice label input:hover+span {
+    color: #fff;
+    border: 2px solid #444;
+    background-color: #444;
+}
+
+.applyButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.applyButtons button:first-child {
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.applyButtons button:first-child:hover {
+    background-color: #45a049;
+    cursor: pointer;
+}
+
+.applyButtons button:last-child {
+    border: none;
+    background-color: #f44336;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.applyButtons button:last-child:hover {
+    background-color: #e53935;
+    cursor: pointer;
+}
+
+.container {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        top: 73%;
+        left: 5%;
+
+
+    }
+
+}

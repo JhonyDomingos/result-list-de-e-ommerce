@@ -8,10 +8,17 @@ import { ResultInfo } from "./resultInfo/ResultInfo";
 import { ResultListContext } from "../../Provider/ResulListContext";
 import { useContext, useState } from "react";
 import { Input } from "../input/Input";
+import { FilterSection } from "../Filter/FilterSection";
 
 export const ShopSection = () => {
-  const { setItemsPerPage, productList, indexOfFirstItem, indexOfLastItem } =
-    useContext(ResultListContext);
+  const {
+    setItemsPerPage,
+    productList,
+    indexOfFirstItem,
+    indexOfLastItem,
+    visible,
+    setVisible,
+  } = useContext(ResultListContext);
 
   const [inputValue, setInputValue] = useState(""); // Estado local para o valor do input
 
@@ -28,6 +35,7 @@ export const ShopSection = () => {
       setItemsPerPage(10); // Se o valor não for um número válido, volta para o valor padrão (10 itens por página)
       setInputValue(""); // Limpa o estado local do input se o valor for inválido
     }
+    
   };
   return (
     <div className="container">
@@ -54,7 +62,7 @@ export const ShopSection = () => {
             props={{
               type: "button",
               title: "Filter Button",
-              onClick: () => {},
+              onClick: () => {setVisible(!visible)},
             }}
             icon={iconFilter}
           />
@@ -75,6 +83,8 @@ export const ShopSection = () => {
           />
         </div>
       </section>
+
+      <FilterSection />
     </div>
   );
 };
