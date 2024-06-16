@@ -1,0 +1,55 @@
+.serviceContainer {
+    background-color: var(--background-section);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 0;
+
+
+
+}
+
+.serviceContainer figure {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem 1.3rem;
+}
+
+.serviceContainer figure img {
+
+    height: 50px;
+
+}
+
+.textBox h2 {
+    margin-bottom: .5rem;
+    font-size: 20px;
+    color: var(--text-customer);
+    font-weight: 600;
+}
+
+.textBox figcaption {
+    font-size: 14px;
+    color: var(--text-gray-description);
+    text-align: center;
+    font-weight: 400;
+
+}
+
+
+@media screen and (min-width: 768px) {
+    .serviceContainer {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0 1rem;
+        height: 270px;
+    }
+
+    
+
+
+}
