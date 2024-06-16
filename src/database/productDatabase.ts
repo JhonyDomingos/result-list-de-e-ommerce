@@ -23,6 +23,7 @@ export interface IProduct {
   discountedPrice?: number;
   description: string;
   image: string;
+  isNew?: boolean;
 }
 
 // Função que gera um array de produtos com IDs únicos
@@ -67,5 +68,6 @@ export const productDatabase: IProduct[] = [
     price: 500000,
     description: "Outdoor bar table and stool",
     image: img2,
+    isNew: true,  
   }),
 ];
