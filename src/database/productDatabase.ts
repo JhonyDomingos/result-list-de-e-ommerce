@@ -19,7 +19,7 @@ Logica para gerar um array de produtos com IDs únicos
 export interface IProduct {
   id: string;
   name: string;
-  originalPrice: number;
+  price: number;
   discountedPrice?: number;
   description: string;
   image: string;
@@ -41,30 +41,30 @@ export const productDatabase: IProduct[] = [
   // Gera 10 produtos do tipo "Syltherine"
   ...generateProducts(10, {
     name: "Syltherine",
-    originalPrice: 2500000,
-    discountedPrice: 3500000,
+    price: 3500000,
+    discountedPrice: 2500000,
     description: "Stylish cafe chair",
     image: img0,
   }),
   // Gera 10 produtos do tipo "Leviosa"
   ...generateProducts(10, {
     name: "Leviosa",
-    originalPrice: 2500000,
+    price: 2500000,
     description: "Stylish cafe chair",
     image: img3,
   }),
   // Gera 10 produtos do tipo "Lolito"
   ...generateProducts(10, {
     name: "Lolito",
-    originalPrice: 700000,
-    discountedPrice: 14000000,
+    price: 14000000,
+    discountedPrice: 700000,
     description: "Luxury big sofa",
     image: img1,
   }),
   // Gera 10 produtos do tipo "Respira"
   ...generateProducts(10, {
     name: "Respira",
-    originalPrice: 500000,
+    price: 500000,
     description: "Outdoor bar table and stool",
     image: img2,
   }),
