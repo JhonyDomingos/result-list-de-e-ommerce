@@ -1,24 +1,25 @@
 .resulListContainer {
     width: 100%;
     padding: 2.875rem 2rem;
+    
 }
 
 
 .cardContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-     
+
     gap: 1rem;
 }
 
 @media screen and (min-width: 768px) {
     .resulListContainer {
         padding: 2.875rem 5rem;
-       
+
     }
 
     .cardContainer {
         flex-wrap: wrap;
     }
-    
+
 }

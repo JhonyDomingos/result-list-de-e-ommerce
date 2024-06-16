@@ -1,13 +1,13 @@
 import { useContext, useMemo } from "react";
 import { Button } from "../../Buttons/defaultButtons/buttons";
 import { ResultListContext } from "../../../Provider/ResulListContext";
-
+import paginationStyles from "./pagination.module.css";
 // Definição do componente Pagination
-export const Pagination = () => { 
+export const Pagination = () => {
   // Obtém as variáveis e funções necessárias do contexto ResultListContext
   const { pages, currentPage, setCurrentPage } = useContext(ResultListContext);
   // Define o número máximo de páginas visíveis de cada lado da página atual
-  const maxVisiblePages = 3;
+  const maxVisiblePages = 1;
   // Cálculo das páginas visíveis usando useMemo para otimização
   const visiblePages = useMemo(() => {
     // Calcula a primeira página visível garantindo que não seja menor que 1
@@ -29,25 +29,31 @@ export const Pagination = () => {
 
   // Verifica se o botão "Previous" pode ser habilitado
   const couldGoBack = currentPage > 1;
+  console.log(couldGoBack);
   // Verifica se o botão "Next" pode ser habilitado
   const couldGoForward = currentPage < pages;
-  
 
   return (
-    <div>
+    <div className={paginationStyles.container}>
       {/* Botão "Previous" para ir para a página anterior */}
       <Button
+        className={`${paginationStyles.paginationButton} ${
+          !couldGoBack ? paginationStyles.hidden : ""
+        }`}
         onClick={() => handlerProductsPagination(currentPage - 1)}
         disabled={!couldGoBack}
+        active={!couldGoBack}
       >
-        Previous
+        Prev
       </Button>
-      <div>
+      <div className={paginationStyles.paginationButtons}>
         {/* Mapeia e renderiza os botões das páginas visíveis */}
         {visiblePages.map((page) => (
           <Button
+           className={`${currentPage === page ? paginationStyles.active : ""}`}
             key={page}
             disabled={currentPage === page} // Desabilita o botão se for a página atual
+            active={currentPage === page} // Adiciona a classe active se for a página atual
             onClick={() => handlerProductsPagination(page)} // Muda para a página clicada
           >
             {page}

@@ -7,9 +7,7 @@ export const ResultPage = () => {
     <div className="container">
       <main>
         <ShopSection />
-
-        <ResultList />
-        <Pagination />
+        <ResultList />      
       </main>
     </div>
   );

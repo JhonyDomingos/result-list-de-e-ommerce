@@ -72,6 +72,7 @@ export const ShopSection = () => {
             end={Math.min(indexOfLastItem, productList.length) || 0}
             total={productList.length}
           />
+          <FilterSection />
         </div>
         <div className={shopSectionStyles.showItems}>
           <Input
@@ -82,9 +83,7 @@ export const ShopSection = () => {
             placeholder="16"
           />
         </div>
-      </section>
-
-      <FilterSection />
+      </section>      
     </div>
   );
 };
