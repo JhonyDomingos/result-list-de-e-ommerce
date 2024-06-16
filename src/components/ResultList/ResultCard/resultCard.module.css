@@ -13,18 +13,14 @@
     font-weight: 600;
 }
 
-.cardList > p {
+.cardList>p {
     color: var(--text-gray-description);
     margin: 0.5rem 1.3rem;
     font-size: 0.9rem;
     font-weight: 500;
 }
 
-.price p {
-    font-size: 20px;
-    margin: .5rem 0 0 1.3rem;
-    font-weight: 600;
-}
+
 
 .price {
     width: 85%;
@@ -33,13 +29,26 @@
     align-items: center;
 }
 
-.price span {
+
+
+
+.originalPrice {
     font-size: 13px;
     font-weight: 300;
     color: var(--text-gray-description);
     text-decoration: line-through;
     margin-top: .3rem;
+
 }
+
+.discontedPrice,
+.defaultPrice {
+    font-size: 20px;
+    margin: .5rem 0 0 1.3rem;
+    font-weight: 600;
+
+}
+
 
 /* Image configuration*/
 .cardList figure {

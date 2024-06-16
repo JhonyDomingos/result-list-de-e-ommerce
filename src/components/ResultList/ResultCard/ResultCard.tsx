@@ -13,8 +13,14 @@ export const ResultCard = ({ product }: IReusltCardProps) => {
       <h2>{product.name}</h2>
       <p>{product.description}</p>
       <div className={cardStyles.price}>
-        <p>Rp {product.originalPrice}</p>
-        {product.discountedPrice && <span>Rp {product.discountedPrice}</span>}
+        {product.discountedPrice && product.discountedPrice < product.price ? (
+          <>
+            <p className={cardStyles.discontedPrice}>Rp {product.discountedPrice}</p>
+            <p className={cardStyles.originalPrice}>Rp {product.price}</p>
+          </>
+        ) : (
+          <p className={cardStyles.defaultPrice}>Rp {product.price}</p>
+        )}
       </div>
     </li>
   );
